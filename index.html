@@ -12,6 +12,8 @@
 			width: 100dvw;
 			height: 100dvh;
 			margin: 0;
+      background: linear-gradient(135deg, #4a90e2,#003366);
+      overflow-x: hidden;
     }
     header {
       background: linear-gradient(135deg, #4a90e2,#003366);
@@ -26,6 +28,28 @@
     header p {
       font-size: 1.25rem;
     }
+    .nav-item {
+      border-radius: 15px;
+      width: 8dvw;
+    }
+
+    .nav-item:hover {
+      background-color: #ecf0e3ee;
+      border-radius: 40px;
+    }
+
+    .nav-item:hover > a {
+      color: #003366;
+    }
+    .nav-item-pink {
+      background-color: #ecf0e3ee;
+      margin-right: 6dvw;
+      color: #003366;
+    }
+    .logo {
+      margin-left: 3dvw;
+    }
+
     .about, .projects, .contact {
       padding: 4rem 2rem;
     }
@@ -40,10 +64,11 @@
 		.container-fluid {
 			height: 7.5dvh;
 		}
-    .active {
-			font-size: 1.5rem;
-			font-weight: 400;
-		}
+    .lead {
+      height:35dvh;
+      overflow: scroll;
+
+    }
     footer {
       background-color: #003366;
       color: white;
@@ -60,25 +85,25 @@
     <nav class="navbar navbar-expand-lg">
 		  <div class="container-fluid">
 				    <a class="navbar-brand" href="#">
-      				<img src="logo.png" alt="Logo" width="128" height="128" class="d-inline-block align-text-center">
+      				<img src="logo.png" alt="Logo" width="128" height="128" class="d-inline-block align-text-center logo">
     				</a>
 		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		      <span class="navbar-toggler-icon"></span>
 		    </button>
 		    <div class="collapse navbar-collapse justify-content-end " id="navbarNavDropdown">
-		      <ul class="navbar-nav align-items-center">
+		      <ul class="navbar-nav align-items-center gap-5">
 						
 		        <li class="nav-item">
-		          <a class="nav-link active text-light" aria-current="page" href="#Begin">Inicio</a>
+		          <a class="nav-link active" aria-current="page" href="#Begin">Inicio</a>
 		        </li>
-						<li class="nav-item">
-		          <a class="nav-link text-light" aria-current="page" href="#profile">Mi perfil</a>
-		        </li>
-		        <li class="nav-item">
-		          <a class="nav-link text-light" href="#experience">Mi experiencia</a>
+						<li class="nav-item ">
+		          <a class="nav-link" aria-current="page" href="#profile">Mi perfil</a>
 		        </li>
 		        <li class="nav-item">
-		          <a class="nav-link text-light" href="#projects">Proyectos</a>
+		          <a class="nav-link" href="#experience">Mi experiencia</a>
+		        </li>
+		        <li class="nav-item nav-item-pink">
+		          <a class="nav-link" href="#projects">Proyectos</a>
 		        </li>
 		      </ul>
 		    </div>
@@ -87,22 +112,37 @@
   </header>
 
   <!-- About -->
-  <section class="about container text-center">
-    <h2 class="mb-4">Mi perfil</h2>
-		<div class="text-center mb-4">
-  		<img src="descarga.png" class="rounded-circle border" alt="...">
-		</div>
-    <p class="lead">
-			Soy Sergio Galarza, un desarrollador de software con experiencia en desarrollo web y aplicaciones móviles.
-			Me especializo en crear soluciones eficientes y escalables utilizando tecnologías modernas como Django, React y recientemente Flutter.
-			Como desarrollador autodidacta, siempre estoy buscando aprender nuevas habilidades y mejorar mis conocimientos.
-			Mi objetivo es contribuir a proyectos innovadores que tengan un impacto positivo en la sociedad, por esta razón busco crear mis proyectos.
-    </p>
+  <section  id="profile" class="about container text-center">
+    <div class="row">
+      <div class="col-6 row gap-3">
+        <div class="col-6">
+          <h2 class="mb-4">Mi perfil</h2>
+          <div class="text-center mb-4">
+  	    	  <img src="descarga.png" class="rounded-circle border" alt="...">
+		      </div>
+        </div>
+        <div class="col-6">
+          <p class="lead">
+		      	Soy Sergio Galarza, un desarrollador de software con experiencia en desarrollo web y aplicaciones móviles.
+		      	Me especializo en crear soluciones eficientes y escalables utilizando tecnologías modernas como Django, React y recientemente Flutter.
+		      	Como desarrollador autodidacta, siempre estoy buscando aprender nuevas habilidades y mejorar mis conocimientos.
+		      	Mi objetivo es contribuir a proyectos innovadores que tengan un impacto positivo en la sociedad, por esta razón busco crear mis proyectos.
+          </p>
+        </div>
+		    
+        
+      </div>
+      <div class="col-6">
+
+      </div>
+    </div>
+    
+    
   </section>
 
   <!-- Projects Interactive -->
-<section class="projects container text-center">
-  <h2 class="mb-4">My Projects</h2>
+<section id="projects"  class="projects container text-center">
+  <h2 class="mb-4">Mis proyectos</h2>
 
   <!-- Buttons to switch projects -->
   <div class="btn-group mb-4" role="group" aria-label="Projects">
