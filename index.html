@@ -6,83 +6,14 @@
   <title>Sergio Galarza - Software Engineer</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			width: 100dvw;
-			height: 100dvh;
-			margin: 0;
-      background: linear-gradient(135deg, #4a90e2,#003366);
-      overflow-x: hidden;
-    }
-    header {
-      background: linear-gradient(135deg, #4a90e2,#003366);
-      color: white;
-      text-align: center;
-      padding: 0rem 1rem;
-    }
-    header h1 {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-    header p {
-      font-size: 1.25rem;
-    }
-    .nav-item {
-      border-radius: 15px;
-      width: 8dvw;
-    }
-
-    .nav-item:hover {
-      background-color: #ecf0e3ee;
-      border-radius: 40px;
-    }
-
-    .nav-item:hover > a {
-      color: #003366;
-    }
-    .nav-item-pink {
-      background-color: #ecf0e3ee;
-      margin-right: 6dvw;
-      color: #003366;
-    }
-    .logo {
-      margin-left: 3dvw;
-    }
-
-    .about, .projects, .contact {
-      padding: 4rem 2rem;
-    }
-    .project-card {
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-		.container-fluid {
-			height: 7.5dvh;
-		}
-    .lead {
-      height:35dvh;
-      overflow: scroll;
-
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- Header -->
-  <header>
+  <header id="begin">
   
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg  position-fixed fixed-top"  >
 		  <div class="container-fluid">
 				    <a class="navbar-brand" href="#">
       				<img src="logo.png" alt="Logo" width="128" height="128" class="d-inline-block align-text-center logo">
@@ -94,7 +25,7 @@
 		      <ul class="navbar-nav align-items-center gap-5">
 						
 		        <li class="nav-item">
-		          <a class="nav-link active" aria-current="page" href="#Begin">Inicio</a>
+		          <a class="nav-link" aria-current="page" href="#begin">Inicio</a>
 		        </li>
 						<li class="nav-item ">
 		          <a class="nav-link" aria-current="page" href="#profile">Mi perfil</a>
@@ -102,7 +33,7 @@
 		        <li class="nav-item">
 		          <a class="nav-link" href="#experience">Mi experiencia</a>
 		        </li>
-		        <li class="nav-item nav-item-pink">
+		        <li class="nav-item button-white">
 		          <a class="nav-link" href="#projects">Proyectos</a>
 		        </li>
 		      </ul>
@@ -113,51 +44,153 @@
 
   <!-- About -->
   <section  id="profile" class="about container text-center">
-    <div class="row">
-      <div class="col-6 row gap-3">
-        <div class="col-6">
-          <h2 class="mb-4">Mi perfil</h2>
-          <div class="text-center mb-4">
-  	    	  <img src="descarga.png" class="rounded-circle border" alt="...">
-		      </div>
-        </div>
-        <div class="col-6">
-          <p class="lead">
-		      	Soy Sergio Galarza, un desarrollador de software con experiencia en desarrollo web y aplicaciones móviles.
-		      	Me especializo en crear soluciones eficientes y escalables utilizando tecnologías modernas como Django, React y recientemente Flutter.
-		      	Como desarrollador autodidacta, siempre estoy buscando aprender nuevas habilidades y mejorar mis conocimientos.
-		      	Mi objetivo es contribuir a proyectos innovadores que tengan un impacto positivo en la sociedad, por esta razón busco crear mis proyectos.
-          </p>
-        </div>
-		    
-        
+    <div class="row align-items-center justify-content-espace-between">
+      <div class="col-5 text-start">
+        <h1 class="mb-3 main-title">Hola, soy Sergio Galarza y...</h1>
+        <p class="mb-4 main-text">Dessarrollo páginas web con Django y React, proximamente apps móviles con Flutter.</p>
+        <button class="btn btn-project mt-3">
+          <a href="#projects">Ver mis proyectos</a>
+        </button>
       </div>
-      <div class="col-6">
-
+      <div class="col-2"></div>
+      <div class="col-5 ">
+        <div class="text-center image-container ">
+          <img src="code.png" alt="code">
+        </div>
       </div>
     </div>
-    
-    
   </section>
 
   <!-- Projects Interactive -->
 <section id="projects"  class="projects container text-center">
-  <h2 class="mb-4">Mis proyectos</h2>
+  <h2 class="mb-5 main-title">Mi trabajo hasta ahora...</h2>
+  <container class="row gap-4">
 
-  <!-- Buttons to switch projects -->
-  <div class="btn-group mb-4" role="group" aria-label="Projects">
-    <button type="button" class="btn btn-outline-primary" onclick="showProject('log')">LogInventory</button>
-    <button type="button" class="btn btn-outline-primary" onclick="showProject('cocina')">Cocina Oculta</button>
-    <button type="button" class="btn btn-outline-primary" onclick="showProject('voting')">Voting App</button>
-  </div>
+	<div class="card text-start col-4">
+    <img src="ProjectImages/LogInventory.webp" class="card-img-top" alt="...">
+    <div class="card-body d-flex flex-column justify-content-between">
+      <p class="card-text">Un software de inventario drigido a instituciones.</p>
+			<div class="more-information-container  text-end ">
+				<button class="more-information">Para más información haz click aquí</button>
+			</div>
+    </div>
+	</div>
 
-  <!-- Project Display -->
-  <div id="project-display" class="card project-card p-4 mx-auto" style="max-width: 600px;">
-    <h5 id="project-title" class="card-title">LogInventory</h5>
-    <p id="project-desc" class="card-text">
-      A smart inventory management system that helps track products, stock levels, and movements efficiently.
-    </p>
+	<div class="card text-start col-4">
+    <img src="ProjectImages/liveChat.png" class="card-img-top" alt="...">
+    <div class="card-body d-flex flex-column justify-content-between">
+      <p class="card-text">Un chat en vivo 1-1 bidireccional.</p>
+			<div class="more-information-container  text-end">
+				<button class="more-information">Para más información haz click aquí</button>
+			</div>
+    </div>
+	</div>
+
+	<div class="card text-start col-12">
+    <img src="ProjectImages/VotingApp.png" class="card-img-top" alt="...">
+    <div class="card-body d-flex flex-column justify-content-between">
+      <p class="card-text">Una app de votacin para I.E. Gabo.</p>
+			<div class="more-information-container text-end ">
+				<button class="more-information">Para más información haz click aquí</button>
+			</div>
+    </div>
+	</div>
+
+
+	<div class="card text-start col-4">
+    <img src="ProjectImages/Cocina oculta.png" class="card-img-top" alt="...">
+    <div class="card-body d-flex flex-column justify-content-between">
+      <p class="card-text">Una aplicación estilo marketplace para una cocinal oculta</p>
+			<div class="more-information-container  text-end">
+				<button class="more-information">Para más información haz click aquí</button>
+			</div>
+    </div>
+	</div>
+
+	</container>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="technologies py-5 mb-5">
+  <div class="container">
+    <h2 class="text-center mb-4 main-title">Tecnologías que manejo hasta ahora...</h2>
+    <div class="row g-4 text-center">
+
+      <!-- Example: HTML -->
+      <div class="col-6 col-md-3">
+        <div class="p-3 border rounded shadow-sm" style="background-color: #cdf;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" 
+               alt="HTML5" width="50" height="50">
+          <p class="mt-2 mb-0">HTML5</p>
+        </div>
+      </div>
+
+      <!-- CSS -->
+      <div class="col-6 col-md-3">
+        <div class="p-3 border rounded shadow-sm" style="background-color: #cdf;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" 
+               alt="CSS3" width="50" height="50">
+          <p class="mt-2 mb-0">CSS3</p>
+        </div>
+      </div>
+
+      <!-- JavaScript -->
+      <div class="col-6 col-md-3">
+        <div class="p-3 border rounded shadow-sm" style="background-color: #cdf;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
+               alt="JavaScript" width="50" height="50">
+          <p class="mt-2 mb-0">JavaScript</p>
+        </div>
+      </div>
+
+      <!-- Python -->
+      <div class="col-6 col-md-3">
+        <div class="p-3 border rounded shadow-sm" style="background-color: #cdf;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
+               alt="Python" width="50" height="50">
+          <p class="mt-2 mb-0">Python</p>
+        </div>
+      </div>
+
+      <!-- Django -->
+      <div class="col-6 col-md-3">
+        <div class="p-3 border rounded shadow-sm" style="background-color: #cdf;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" 
+               alt="Django" width="50" height="50">
+          <p class="mt-2 mb-0">Django</p>
+        </div>
+      </div>
+
+      <!-- Bootstrap -->
+      <div class="col-6 col-md-3">
+        <div class="p-3 border rounded shadow-sm" style="background-color: #cdf;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" 
+               alt="Bootstrap" width="50" height="50">
+          <p class="mt-2 mb-0">Bootstrap</p>
+        </div>
+      </div>
+
+      <!-- Git -->
+      <div class="col-6 col-md-3">
+        <div class="p-3 border rounded shadow-sm" style="background-color: #cdf;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" 
+               alt="Git" width="50" height="50">
+          <p class="mt-2 mb-0">Git</p>
+        </div>
+      </div>
+
+      <!-- PostgreSQL -->
+      <div class="col-6 col-md-3">
+        <div class="p-3 border rounded shadow-sm" style="background-color: #cdf;">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" 
+               alt="PostgreSQL" width="50" height="50">
+          <p class="mt-2 mb-0">PostgreSQL</p>
+        </div>
+      </div>
+
+    </div>
   </div>
+</section>
 </section>
 
   <!-- Footer -->
@@ -170,7 +203,7 @@
   	const projects = {
   	  log: {
   	    title: "LogInventory",
-  	    desc: "A smart inventory management system that helps track products, stock levels, and movements efficiently."
+  	    desc: "Un sofware de inventario hecho con Django, el cual esta dirigido a institucinoes educativas con la finalidad de llevar un control de los bienes materiales y que los estudiantes puedan tener acceso a los recuross de la institucion."
   	  },
   	  cocina: {
   	    title: "Cocina Oculta",
@@ -179,7 +212,11 @@
   	  voting: {
   	    title: "Voting App",
   	    desc: "A Django-based school voting app with candidate sections, live results, and responsive design."
-  	  }
+  	  },
+      liveChat : {
+        title : "Live Chat Application",
+        desc : "A real-time chat web app using Django Channels and WebSockets for instant messaging. For next aggregate to LogInventory."
+      }
   	};
 	
   	// Function to change project content
